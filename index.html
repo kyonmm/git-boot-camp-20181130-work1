@@ -12,12 +12,12 @@
             document.getElementById('result').value = calculate(e1, e2, op, decimalPoint)
         }
         function calculate(e1, e2, op, decimalPoint){
-            // if(isNaN(e1) || isNaN(e2)){
-            //     return 'UnSupport'
-            // }
-            if(isNaN(e1)){
+            if(isNaN(e1) || isNaN(e2)){
                 return 'UnSupport'
             }
+            // if(isNaN(e1)){
+                // return 'UnSupport'
+            // }
             // var f1 = parseFloat(e1)
             const f1 = Math.abs(parseFloat(e1));
             const f2 = parseFloat(e2);
@@ -51,7 +51,6 @@
             if(decimalPoint === 'round'){
                 return Math.round(value)
                 // return Math.floor(value)
-                // pull request check
             }
             return value
         }
