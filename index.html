@@ -48,8 +48,7 @@
                 return Math.floor(value)
             }
             if(decimalPoint === 'round'){
-                // return Math.round(value)
-                return Math.floor(value)
+                return Math.round(value)
             }
             return value
         }
@@ -73,7 +72,7 @@
     <option id="multiply" value="multiply">×</option>
     <option id="mod" value="mod">÷</option>
     <option id="sqrt" value="sqrt">√</option>
-    <option id="square" value="square">x²</option>
+    <option id="square" value="square">x2</option>
 </select>
 <label for="second"></label><input type="text" id="second">
 <input type="button" id="execute" value="=" onclick="f()">
