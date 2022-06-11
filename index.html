@@ -14,10 +14,10 @@
         }
         function calculate(e1, e2, op, decimalPoint){
             // if(isNaN(e1) || isNaN(e2)){
-            //     return 'UnSupport'
+                // return alert("数字をいれてください")
             // }
             if(isNaN(e1)){
-                return 'UnSupport'
+                return alert("数字をいれてください")
             }
             // var f1 = bigDecimal(e1)
             const f1 = new bigDecimal(Math.abs(e1));
@@ -35,7 +35,7 @@
                 case 'square':
                     return decimalPointCalculate(f1.multiply(f1), decimalPoint)
                 default :
-                    return 'UnSupport'
+                    return alert("数字をいれてください")
             }
         }
         function decimalPointCalculate(value, decimalPoint){
