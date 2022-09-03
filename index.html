@@ -24,14 +24,15 @@
             const f2 = new bigDecimal(e2);
             switch (op) {
                 case 'plus':
-                    return decimalPointCalculate(f1.add(f2), decimalPoint)
+                    // return decimalPointCalculate(f1.add(f2), decimalPoint)
+                    return decimalPointCalculate(f1.subtract(f2), decimalPoint)
                 case 'minus':
                     return decimalPointCalculate(f1.subtract(f2), decimalPoint)
                 case 'multiply':
                     return decimalPointCalculate(f1.multiply(f2), decimalPoint)
                 case 'mod':
-                    return decimalPointCalculate(f1.divide(f2), decimalPoint)
-                    // return decimalPointCalculate(f1.multiply(f2), decimalPoint)
+                    // return decimalPointCalculate(f1.divide(f2), decimalPoint)
+                    return decimalPointCalculate(f1.multiply(f2), decimalPoint)
                 case 'square':
                     return decimalPointCalculate(f1.multiply(f1), decimalPoint)
                 default :
@@ -40,14 +41,14 @@
         }
         function decimalPointCalculate(value, decimalPoint){
             if(decimalPoint === 'ceil'){
-                // return value.ceil()
-                return value.floor()
+                return value.ceil()
+                // return value.floor()
             }
             if(decimalPoint === 'floor'){
                 return value.floor()
             }
             if(decimalPoint === 'round'){
-                // return value.round(0)
+                // return new bigDecimal(Math.round(value.getValue()))
                 return value.floor()
             }
             return value
@@ -79,7 +80,7 @@
     <option id="raw" value="raw">小数点以下そのまま</option>
     <option id="floor" value="floor">小数点以下切り捨て</option>
     <option id="ceil" value="ceil">小数点以下切り上げ</option>
-    <option id="rout" value="round">小数点以下四捨五入</option>
+    <option id="round" value="round">小数点以下四捨五入</option>
 </select>
 </body>
 </html>
